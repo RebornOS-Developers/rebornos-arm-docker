@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-mkdir -p ~/rebornos-shared
+mkdir -p ~/rebornos-arm-shared
 
 xhost +local:root \
     && docker run \
@@ -9,11 +9,11 @@ xhost +local:root \
         --pid=host \
         --privileged=true \
         --volume /tmp/.X11-unix:/tmp/.X11-unix \
-        --volume ~/rebornos-shared:/home/rebornos-shared \
+        --volume ~/rebornos-arm-shared:/home/rebornos-arm-shared \
         --env DISPLAY=${DISPLAY} \
         --interactive \
         --tty \
         --rm \
-        rebornos/rebornos:latest
+        rebornos/rebornos-arm:latest
 
 xhost -local:root

@@ -1,6 +1,6 @@
 FROM archlinux:base-devel
 
-WORKDIR /home/rebornos-shared
+WORKDIR /home/rebornos-arm-shared
 ENV LANG=C.UTF-8
 SHELL ["/bin/sh", "-c"]
 
@@ -16,4 +16,4 @@ RUN pacman-key --init \
         /var/cache/pacman/pkg/ \
         /var/lib/pacman/sync/
 
-CMD ["/usr/bin/init-rebornos-docker.sh"]
+CMD ["/usr/bin/init-rebornos-arm-docker.sh"]
