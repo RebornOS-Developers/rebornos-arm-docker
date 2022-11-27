@@ -18,12 +18,12 @@ jobs:
       - name: login to docker hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: rebornos
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and push to docker hub
         run: |
-          docker build --tag rebornos/rebornos:latest . --network=host --platform linux/arm64
-          docker push rebornos/rebornos:latest
+          docker build --tag rebornos/rebornos:latest-arm64 . --network=host --platform linux/arm64
+          docker push rebornos/rebornos:latest-arm64
       - name: Login into ghcr.io
         uses: docker/login-action@v1
         with:
