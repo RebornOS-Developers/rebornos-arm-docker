@@ -21,7 +21,9 @@ rank_rebornos_mirrors() {
     TEMP_FILE="$1"
     TIMEOUT="$2"
 
-    sed -n 's/\s*Server\s*=\s*//p' "/etc/pacman.d/reborn-mirrorlist" | /usr/bin/rate-mirrors --concurrency=8 --per-mirror-timeout="$TIMEOUT" --allow-root --save="$TEMP_FILE" stdin
+    sed -n 's|\s*Server\s*=\s*||p' "/etc/pacman.d/reborn-mirrorlist" | sed 's|$repo/os/$arch/|RebornOS/os/aarch64/RebornOS.files|g' | /usr/bin/rate-mirrors --concurrency=8 --per-mirror-timeout="$TIMEOUT" --allow-root --save="$TEMP_FILE" stdin
+    sed -i 's|RebornOS/os/aarch64/RebornOS.files|$repo/os/$arch/|g' "$TEMP_FILE"
+    sed -i 's|\s*http|Server = http|g' "$TEMP_FILE" 
     return "$?"
 }
 
