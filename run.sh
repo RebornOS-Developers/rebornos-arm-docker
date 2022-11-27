@@ -9,7 +9,7 @@ xhost +local:root \
         --pid=host \
         --privileged=true \
         --volume /tmp/.X11-unix:/tmp/.X11-unix \
-        --volume ~/rebornos-arm-shared:/home/rebornos-arm-shared \
+        --volume ~/rebornos-shared:/home/rebornos-shared \
         --env DISPLAY=${DISPLAY} \
         --interactive \
         --tty \
