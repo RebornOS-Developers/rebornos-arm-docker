@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-mkdir -p ~/rebornos-arm-shared
+mkdir -p ~/rebornos-shared
 
 xhost +local:root \
     && docker run \

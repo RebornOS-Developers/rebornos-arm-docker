@@ -89,7 +89,7 @@ rank_arch_mirrors() {
     TEMP_FILE="$1"
     TIMEOUT="$2"
 
-    /usr/bin/rate-mirrors --protocol=https --per-mirror-timeout="$TIMEOUT" --allow-root --save="$TEMP_FILE" archarm
+    /usr/bin/rate-mirrors --per-mirror-timeout="$TIMEOUT" --allow-root --save="$TEMP_FILE" archarm
     return "$?"
 }
 
