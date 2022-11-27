@@ -1,12 +1,16 @@
 # RebornOS-ARM-Docker
 
+[![Build and publish docker image](https://github.com/RebornOS-Developers/rebornos-arm-docker/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/RebornOS-Developers/rebornos-arm-docker/actions/workflows/build.yml)
+
 A Docker Container for RebornOS ARM64
 
-The docker image is uploaded at https://hub.docker.com/r/rebornos/rebornos-arm
+The docker image is uploaded at https://hub.docker.com/r/rebornos/rebornos
 
 The `build.sh`, `run.sh`, and `build_and_run.sh` scripts are self explanatory. They build an image and run the container using the local `Dockerfile`.
 
 ## Using the image from Docker Hub
+
+> **Note:** To run on x86_64 you need to have `qemu-user-static` installed on your system. You can install it using `sudo pacman -S qemu-user-static` on Arch Linux.
 
 > **Note:** The container is already configured to additionally start a shell in the `/home/rebornos-arm-shared` directory (within the container)
 
