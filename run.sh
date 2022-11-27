@@ -14,6 +14,6 @@ xhost +local:root \
         --interactive \
         --tty \
         --rm \
-        rebornos/rebornos-arm:latest
+        rebornos/rebornos:latest-arm64
 
 xhost -local:root

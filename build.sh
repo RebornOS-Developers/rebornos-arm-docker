@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-docker build --tag rebornos/rebornos-arm:latest .
+docker build --tag rebornos/rebornos:latest-arm64 .
